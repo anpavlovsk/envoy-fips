@@ -31,11 +31,10 @@ The correctness of the resulting FIPS build can be verified by checking the pres
 sudo docker run -ti --rm --entrypoint envoy envoy --version
 ````
 Output
-<span style="background-color:black">
-Black
+
 ````
 ubuntu@ip-172-31-7-3:~/envoy$ sudo docker run -ti --rm --entrypoint envoy envoy --version
 
 envoy  version: 0a0fc44f86a94546d907a47253741478786394df/1.24.0-dev/Clean/RELEASE/BoringSSL-FIPS
 ````
-</span>
+

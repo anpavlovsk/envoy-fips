@@ -1,7 +1,6 @@
-# envoy-fips
-Building Envoy in a FIPS compliant mode 
+# Building Envoy in a FIPS compliant mode 
 
-Envoy has support for building in a FIPS compliant mode as documented here. The upstream project does not distribute a FIPS compliant Envoy container image, but combining the documented process with the processes for building the Envoy executable and container image, we can produce one.
+Envoy has support for building in a FIPS compliant mode. The upstream project does not distribute a FIPS compliant Envoy container image, but combining the documented process with the processes for building the Envoy executable and container image, we can produce one.
 
 Again we will need the Envoy source code checked out to the version to build and Docker installed on your computer. The simplest way to build Envoy without having to learn Bazel and set up a C++ toolchain on your computer is to build using the Envoy build container image which contains the necessary tools pre-installed. Note that if you do build with FIPS mode outside of the build container, you can only do so on a Linux-amd64 architecture.
 
@@ -13,7 +12,7 @@ Once that build completes, you should have a file named envoy_binary.tar.gz in y
 
 If you would like to build an image with Envoy according to your own specifications, you can unpack the resulting tar archive and you will find a stripped Envoy binary in the build_release_stripped directory and a unstripped Envoy with debug info in the build_release directory.
 
-To build an image matching the canonical Envoy upstream release image ( envoyproxy/envoy), run the following:
+To build an image matching the canonical Envoy upstream release image (envoyproxy/envoy), run the following:
 ````
 # Make ./linux/amd64 directories.
 mkdir -p ./linux/amd64
@@ -32,8 +31,11 @@ The correctness of the resulting FIPS build can be verified by checking the pres
 sudo docker run -ti --rm --entrypoint envoy envoy --version
 ````
 Output
+<span style="background-color:black">
+
 ````
 ubuntu@ip-172-31-7-3:~/envoy$ sudo docker run -ti --rm --entrypoint envoy envoy --version
 
 envoy  version: 0a0fc44f86a94546d907a47253741478786394df/1.24.0-dev/Clean/RELEASE/BoringSSL-FIPS
 ````
+</span>

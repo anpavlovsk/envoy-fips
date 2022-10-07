@@ -2,7 +2,7 @@
 
 Envoy has support for building in a FIPS compliant mode. The upstream project does not distribute a FIPS compliant Envoy container image, but combining the documented process with the processes for building the Envoy executable and container image, we can produce one.
 
-Again we will need the Envoy source code checked out to the version to build and Docker installed on your computer. The simplest way to build Envoy without having to learn Bazel and set up a C++ toolchain on your computer is to build using the Envoy build container image which contains the necessary tools pre-installed. Note that if you do build with FIPS mode outside of the build container, you can only do so on a **Linux-amd64*&** architecture.
+Again we will need the Envoy source code checked out to the version to build and Docker installed on your computer. The simplest way to build Envoy without having to learn Bazel and set up a C++ toolchain on your computer is to build using the Envoy build container image which contains the necessary tools pre-installed. Note that if you do build with FIPS mode outside of the build container, you can only do so on a **Linux-amd64** architecture.
 
 We can first compile the Envoy binary by running the following in a bash shell from the Envoy source directory:
 ````
